@@ -11,8 +11,8 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>DEV 272 · Mobile Application Development</Text>
-      <Text style={styles.body}>Hello, I am {studentName}.</Text>
-      <Text style={styles.body}>This quarter I want to build {appIdea}.</Text>
+      <Text style={styles.body}>Hello, I am Jordan Gatewood.</Text>
+      <Text style={styles.body}>This quarter I want to build many things, but one that I think would be interesting is a music app with a "selective loop" function.</Text>
       <Text style={styles.hint}>Edit src/app/index.tsx to change this screen.</Text>
     </View>
   );
