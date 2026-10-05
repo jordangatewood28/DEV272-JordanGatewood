@@ -4,15 +4,15 @@ import { StyleSheet, Text, View } from "react-native";
 // Week 1: change the two lines marked 👇, run the app, commit, push.
 export default function Index() {
   // 👇 Week 1: replace with your name
-  const studentName = "Your Name";
+  const studentName = "Jordan Gatewood";
   // 👇 Week 1: replace with something you want to build this quarter
-  const appIdea = "an app idea I have";
+  const appIdea = " many things, but one that I think would be interesting is a music app with a 'selective loop' function";
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>DEV 272 · Mobile Application Development</Text>
-      <Text style={styles.body}>Hello, I am Jordan Gatewood.</Text>
-      <Text style={styles.body}>This quarter I want to build many things, but one that I think would be interesting is a music app with a "selective loop" function.</Text>
+      <Text style={styles.body}>Hello, I am {studentName}.</Text>
+      <Text style={styles.body}>This quarter I want to build {appIdea}.</Text>
       <Text style={styles.hint}>Edit src/app/index.tsx to change this screen.</Text>
     </View>
   );
