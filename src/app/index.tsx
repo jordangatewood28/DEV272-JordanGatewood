@@ -13,11 +13,10 @@ export default function Index() {
       <Text style={styles.title}>Music Player with Selective Loop.</Text>
       <View style={styles.row}>
         <TextInput style={styles.input} placeHolder="Search Musics" />
-        <Button style={styles.button} onPress{() => console.log("Search")}
+        <Pressable style={styles.button} onPress{() => console.log("Search")}>
+          <Text style={styles.button}>Go</Text>
+        </Pressable>
       </View>
-      <Text style={styles.body}>Hello, I am {studentName}.</Text>
-      <Text style={styles.body}>This quarter I want to build {appIdea}.</Text>
-      <Text style={styles.hint}>Edit src/app/index.tsx to change this screen.</Text>
     </View>
   );
 }
