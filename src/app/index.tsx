@@ -10,7 +10,11 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>DEV 272 · Mobile Application Development</Text>
+      <Text style={styles.title}>Music Player with Selective Loop.</Text>
+      <View style={styles.row}>
+        <TextInput style={styles.input} placeHolder="Search Musics" />
+        <Button style={styles.button} onPress{() => console.log("Search")}
+      </View>
       <Text style={styles.body}>Hello, I am {studentName}.</Text>
       <Text style={styles.body}>This quarter I want to build {appIdea}.</Text>
       <Text style={styles.hint}>Edit src/app/index.tsx to change this screen.</Text>
