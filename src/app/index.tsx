@@ -16,6 +16,7 @@ export default function Index() {
 
 function Header() {
   const [query, setQuery] = useState<string>("");
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Music List</Text>
