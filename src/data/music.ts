@@ -1,11 +1,11 @@
 export type MusicType = {
-  id: number;
+  id: string;
   name: string;
   artist: string;
   album: string;
 };
 
-export const music: Music[] = [
+export const music: MusicType[] = [
   {
     id: "1",
     name: "FS-12 Revoker",
