@@ -1,14 +1,12 @@
 import { MusicType, music } from "@/data/music";
-import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { FlatList, Platform, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
-// This is the home screen (route "/").
-// Week 1: change the two lines marked 👇, run the app, commit, push.
 export default function Index() {
   return (
     <FlatList
       data={music}
       keyExtractor={(m) => m.id}
-      renderItem={({item}) => <MusicRow music={item}/>}
+      renderItem={({ item }) => <MusicRow music={item}/>}
       ListHeaderComponent={<Header />}
       contentContainerStyle={styles.list}
       />
@@ -76,9 +74,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     gap: 8,
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
+        shadowOffset: { width: 0, height: 2},
+      },
+      android: {elevation: 2},
+    })
   },
   cardMain: {flex: 1, gap: 2},
   cardTitle: { fontWeight: "600"},
   cardSub: {color: "gray"},
 });
-
