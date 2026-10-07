@@ -8,9 +8,10 @@ export default function Index() {
     <FlatList
       data={music}
       keyExtractor={(m) => m.id}
-      renderItem{({ item }) => <MusicRow music={item}/>}
-      ListHeaderCompnent={<Header />}
-      contentContainerStyle={styles.list} />
+      renderItem={({item}) => <MusicRow music={item}/>}
+      ListHeaderComponent={<Header />}
+      contentContainerStyle={styles.list}
+      />
   );
 }
 
@@ -29,12 +30,14 @@ function Header() {
 }
 
 function MusicRow({ music }: { music: MusicType }) {
-  <View style={styles.card}>
-    <View style={styles.cardMain}>
-      <Text style={styles.cardTitle}></Text>
-      <Text style={styles.cardSub}></Text>
+  return(
+    <View style={styles.card}>
+      <View style={styles.cardMain}>
+        <Text style={styles.cardTitle}></Text>
+        <Text style={styles.cardSub}></Text>
+      </View>
     </View>
-  </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -78,3 +81,4 @@ const styles = StyleSheet.create({
   cardTitle: { fontWeight: "600"},
   cardSub: {color: "gray"},
 });
+
