@@ -29,7 +29,7 @@ function Header() {
           autoCapitalize="none"
           returnKeyType="search"
         />
-        <Pressable style={styles.button} onPress={() => console.log("Search")}>
+        <Pressable style={styles.button} onPress={() => setQuery("Search")}>
           <Text style={styles.button}>Go</Text>
         </Pressable>
       </View>
