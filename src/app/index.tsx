@@ -30,7 +30,7 @@ function Header() {
           returnKeyType="search"
         />
         <Pressable style={styles.button} onPress={() => setQuery("Search")}>
-          <Text style={styles.button}>Go</Text>
+          <Text style={styles.buttonText}>Go</Text>
         </Pressable>
       </View>
     </View>
