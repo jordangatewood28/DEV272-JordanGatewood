@@ -1,4 +1,5 @@
 import { MusicType, music } from "@/data/music";
+import { useState } from "react";
 import { FlatList, Platform, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Index() {
@@ -14,6 +15,8 @@ export default function Index() {
 }
 
 function Header() {
+  const [query, setQuery] = useState<string>("");
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Music List</Text>
@@ -21,6 +24,9 @@ function Header() {
         <TextInput
           style={styles.input}
           placeholder="Search music"
+          value={query}
+          onChangeText={setQuery}
+          returnKeyType="search"
         />
         <Pressable style={styles.button} onPress={() => console.log("")}>
           <Text style={styles.buttonText}>Go</Text>
