@@ -26,7 +26,6 @@ function Header() {
           placeholder="Search music"
           value={query}
           onChangeText={setQuery}
-          returnKeyType="search"
         />
         <Pressable style={styles.button} onPress={() => console.log("")}>
           <Text style={styles.buttonText}>Go</Text>
