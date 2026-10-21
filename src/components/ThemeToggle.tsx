@@ -28,13 +28,10 @@ export default function Toggle() {
 
 const styles = StyleSheet.create({
     toggle: {
-        alignSelf: "flex-start",
-        paddingHorizontal: 16,
-        paddingVertical: 8,
+        paddingHorizontal: 12,
+        paddingVertical: 6,
         borderRadius: 999,
-        backgroundColor: "white",
     },
-    toggleOn: {backgroundColor: "blue"},
-    label: {fontWeight: "600", color:"gray"},
+    label: {fontSize: 14, fontWeight: "600",},
     labelOn: {color: "white"}
 });
