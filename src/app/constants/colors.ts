@@ -10,7 +10,7 @@ export const colors = {
     dark: {
         text: "white",
         muted: "gray",
-        card: "black",
+        card: "white",
         cardBorder: "dark gray",
         border: "white",
         primary: "red",
