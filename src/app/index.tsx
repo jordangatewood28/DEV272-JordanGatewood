@@ -27,7 +27,7 @@ function Header() {
           value={query}
           onChangeText={setQuery}
         />
-        <Pressable style={styles.button} onPress={() => console.log("")}>
+        <Pressable style={styles.button} onPress={() => console.log(query)}>
           <Text style={styles.buttonText}>Go</Text>
         </Pressable>
       </View>
