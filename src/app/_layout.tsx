@@ -1,4 +1,3 @@
-import ThemeToggle from "@/components/ThemeToggle";
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "react-native";
@@ -11,7 +10,15 @@ export default function RootLayout() {
     <ThemeProvider value={scheme === "light" ? DarkTheme : DefaultTheme}>
       <StatusBar style="auto"/>
       <Stack>
-        <Stack.Screen name="index" options={{ title: "Music List", headerRight: () => <ThemeToggle /> }} />
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: true,
+            title: "Music List",
+            // headerRight: () => <ThemeToggle />,
+            headerBackButtonDisplayMode: "default",
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );
