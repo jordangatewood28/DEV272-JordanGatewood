@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from "react-native"
 
-export default function Favorites() {
+export default function Music() {
     return(
         <View style={styles.container}>
-            <Text>No favorites have been added yet.</Text>
+            <Text>No music added to the list yet.</Text>
         </View>
     );
 }

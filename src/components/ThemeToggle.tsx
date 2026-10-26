@@ -19,7 +19,7 @@ export default function Toggle() {
                 {backgroundColor: c.text, opacity: pressed ? 0.7  : 1},
             ]}
         >
-            <Text style={[styles.label, { color: c.card}]}>
+            <Text style={[styles.label, {color: c.card}]}>
                 {isDark ? "Light" : "Dark"}
             </Text>
         </Pressable>
@@ -32,6 +32,5 @@ const styles = StyleSheet.create({
         paddingVertical: 6,
         borderRadius: 999,
     },
-    label: {fontSize: 14, fontWeight: "600",},
-    labelOn: {color: "white"}
+    label: {fontSize: 14, fontWeight: "600",}
 });

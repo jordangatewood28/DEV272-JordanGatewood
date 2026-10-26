@@ -10,16 +10,16 @@ export default function TabLayout() {
                 options={{
                     title: "Music",
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons iname="music-outline" color={color} size={size} />
+                        <Ionicons iname="musical-notes-outline" color={color} size={size} />
                     ),
                 }}
             />
             <Tabs.Screen
-                name="favorites"
+                name="listen-list"
                 options={{
-                    title: "Music",
+                    title: "Listen List",
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons iname="star-outline" color={color} size={size} />
+                        <Ionicons iname="headset-outline" color={color} size={size} />
                     ),
                 }}
             />
@@ -28,7 +28,7 @@ export default function TabLayout() {
                 options={{
                     title: "Platforms",
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons iname="circle-outline" color={color} size={size} />
+                        <Ionicons iname="play-circle-outline" color={color} size={size} />
                     ),
                 }}
             />
