@@ -1,3 +1,4 @@
+import { ListenProvider } from "@/context/ListenContext";
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "react-native";
@@ -8,18 +9,20 @@ export default function RootLayout() {
   const scheme = useColorScheme();
   return (
     <ThemeProvider value={scheme === "light" ? DarkTheme : DefaultTheme}>
+      <ListenProvider>
       <StatusBar style="auto"/>
       <Stack>
         <Stack.Screen
           name="index"
           options={{
-            headerShown: true,
-            title: "Music List",
+            headerShown: false,
+            // title: "Music List",
             // headerRight: () => <ThemeToggle />,
-            headerBackButtonDisplayMode: "default",
+            // headerBackButtonDisplayMode: "default",
           }}
         />
       </Stack>
+      </ListenProvider>
     </ThemeProvider>
   );
 }

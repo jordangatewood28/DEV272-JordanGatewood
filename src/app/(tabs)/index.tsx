@@ -1,8 +1,17 @@
 import { MusicType, music } from "@/data/music";
 import { useState } from "react";
-import { FlatList, Platform, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { FlatList, Platform, Pressable, StyleSheet, Text, TextInput, useColorScheme, View } from "react-native";
+import { colors } from "../constants/colors";
 
 export default function Index() {
+  const [query, setQuery] = useState<string>("");
+  const q = query.trim().toLowerCase();
+  const filtered = music.filter(
+    (r) => r.name.toLowerCase().includes(q)
+  );
+
+  const c = colors[useColorScheme() === "light" ? "dark": "light"];
+
   return (
     <FlatList
       data={music}
