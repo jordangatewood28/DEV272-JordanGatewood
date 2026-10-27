@@ -23,15 +23,6 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
-                name="platforms"
-                options={{
-                    title: "Platforms",
-                    tabBarIcon: ({color, size}) => (
-                        <Ionicons iname="play-circle-outline" color={color} size={size} />
-                    ),
-                }}
-            />
         </Tabs>
     )
 }

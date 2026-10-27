@@ -17,4 +17,4 @@ export const colors = {
     }
 }
 
-export type Pallete = typeof colors.light;
+export type Palette = typeof colors.light;

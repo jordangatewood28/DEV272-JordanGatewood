@@ -3,20 +3,20 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { useListen } from "@/context/ListenContext"
-import { music } from "@/data/music"
+import { musics } from "@/data/music"
 import { usePalette } from "@/hooks/usePalette";
 
 export default function MusicDetail() {
     const { id } = useLocalSearchParams<{ id: string }>();
     const c = usePalette();
     const { isListen, toggleListen } = useListen();
-    const imusic = music.find((m) => m.id === id);
+    const imusic = musics.find((m) => m.id === id);
 
-    if (!music) {
+    if (!imusic) {
         return(
             <View>
                 <Stack.Screen options={{ title: "Not found" }}/>
-                <View>
+                <View style={[styles.card, {backgroundColor: c.card, borderColor: c.cardBorder},]}>
                     <Text>Not found</Text>
                     <Text>No music with ID {id}.</Text>
                 </View>

@@ -5,7 +5,7 @@ export type MusicType = {
   album: string;
 };
 
-export const music: MusicType[] = [
+export const musics: MusicType[] = [
   {
     id: "1",
     name: "FS-12 Revoker",
