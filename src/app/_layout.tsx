@@ -10,18 +10,25 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={scheme === "light" ? DarkTheme : DefaultTheme}>
       <ListenProvider>
-      <StatusBar style="auto"/>
-      <Stack>
-        <Stack.Screen
-          name="index"
-          options={{
-            headerShown: false,
-            // title: "Music List",
-            // headerRight: () => <ThemeToggle />,
-            // headerBackButtonDisplayMode: "default",
-          }}
-        />
-      </Stack>
+        <StatusBar style="auto"/>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen 
+            name="musics/[id]"
+            options={{
+              title: "Music List", 
+              headerBackButtonDisplayMode: "minimal",
+            }}
+          />
+          <Stack.Screen
+            name="add"
+            options={{
+              title: "Add a music",
+              headerBackButtonDisplayMode: "minimal",
+              gestureEnabled: false,
+            }}
+          />
+        </Stack>
       </ListenProvider>
     </ThemeProvider>
   );

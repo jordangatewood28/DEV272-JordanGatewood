@@ -2,24 +2,40 @@ import { MusicType, musics } from "@/data/music";
 import { useState } from "react";
 import { FlatList, Platform, Pressable, StyleSheet, Text, TextInput, useColorScheme, View } from "react-native";
 import { colors } from "../constants/colors";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { useRouter } from "expo-router";
+import { usePalette } from "@/hooks/usePalette";
 
 export default function Index() {
   const [query, setQuery] = useState<string>("");
+  const router = useRouter();
+  const c = usePalette();
   const q = query.trim().toLowerCase();
   const filtered = musics.filter(
-    (r) => r.name.toLowerCase().includes(q)
+    (m) => m.name.toLowerCase().includes(q)
   );
 
-  const c = colors[useColorScheme() === "light" ? "dark": "light"];
-
   return (
-    <FlatList
-      data={musics}
-      keyExtractor={(m) => m.id}
-      renderItem={({ item }) => <MusicRow music={item}/>}
-      ListHeaderComponent={<Header />}
-      contentContainerStyle={styles.list}
+    <View style={styles.screen}>
+      <FlatList
+        data={musics}
+        keyExtractor={(m) => m.id}
+        renderItem={({ item }) => <MusicRow music={item}/>}
+        ListHeaderComponent={<Header />}
+        contentContainerStyle={styles.list}
       />
+      <Pressable
+        onPress={() => console.log("Don't forget to add a new route")}
+        accessibilityRole="button"
+        accessibilityLabel="Add music"
+        style={({ pressed }) => [
+          styles.fab,
+          {backgroundColor: c.primary, opacity: pressed ? 0.8 : 1}
+        ]}
+      >
+        <Ionicons name="add" size={28} color="#fff" />
+      </Pressable>
+    </View>
   );
 }
 
@@ -57,6 +73,8 @@ function MusicRow({ music }: { music: MusicType }) {
 
 const styles = StyleSheet.create({
   list: { padding: 16, gap: 8},
+  screen: {},
+  fab: {},
   container: {
     flex: 1,
     alignItems: "center",

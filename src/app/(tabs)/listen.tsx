@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, Text, View} from "react-native"
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 import { MusicRow } from "@/components/MusicRow";
 import { useListen } from "@/context/ListenContext";
@@ -24,8 +24,8 @@ export default function ListenList() {
 
     return(
         <FlatList
-            data={listen}
-            keyExtractor={(m) => m}
+            data={toListen}
+            keyExtractor={(m) => m.id}
             renderItem={({item}) => <MusicRow music={item} />}
             contentContainerStyle={styles.list}
         />
